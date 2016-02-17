@@ -23,4 +23,6 @@ public class AppTest extends FluentTest {
       goTo("http://localhost:4567/");
       assertThat(pageSource()).contains("CD Organizer");
   }
+
+  
 }

@@ -14,4 +14,18 @@ public class CdTest {
     Cd myCd = new Cd("cd name");
     assertEquals("cd name", myCd.getTitle());
   }
+
+  @Test
+  public void all_returnsAllInstancesOfCd() {
+    Cd firstCd = new Cd ("cd 1");
+    Cd secondCd = new Cd ("cd 2");
+    assertTrue(Cd.all().contains(firstCd));
+    assertTrue(Cd.all().contains(secondCd));
+  }
+
+  @Test
+  public void getId_taskInstantiateWithAnID_true() {
+    Cd myCd = new Cd("cd name");
+    assertEquals(Cd.all().size(), myCd.getId());
+  }
 }

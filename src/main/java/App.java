@@ -13,8 +13,17 @@ public class App {
 
     get("/", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
-      // model.put("", request.session().attribute(""));
       model.put("template", "templates/home.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    get("/list", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      
+      String title = request.queryParams("title");
+      Cd myCd = new Cd(title);
+
+      model.put("template", "templates/list.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
     //
