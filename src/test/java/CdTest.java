@@ -14,6 +14,4 @@ public class CdTest {
     Cd myCd = new Cd("cd name");
     assertEquals("cd name", myCd.getTitle());
   }
-
-  
 }
