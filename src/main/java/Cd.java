@@ -4,4 +4,8 @@ public class Cd {
   public Cd(String title) {
     mTitle = title;
   }
+
+  public String getTitle() {
+    return mTitle;
+  }
 }

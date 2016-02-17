@@ -8,4 +8,10 @@ public class CdTest {
     Cd myCd = new Cd("cd name");
     assertEquals(true, myCd instanceof Cd);
   }
+
+  @Test
+  public void cd_instantiantesWithTitle_true() {
+    Cd myCd = new Cd("cd name");
+    assertEquals("cd name", myCd.getTitle());
+  }
 }
