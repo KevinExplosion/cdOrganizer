@@ -31,4 +31,17 @@ public class AppTest extends FluentTest {
     submit(".btn");
     assertThat(pageSource()).contains("cd name");
   }
+
+  @Test
+  public void multipleCDsAreDisplayedTest() {
+    goTo("http://localhost:4567/");
+    fill("#title").with("cd 1");
+    submit(".btn");
+    goTo("http://localhost:4567/");
+    fill("#title").with("cd 2");
+    submit(".btn");
+    // click("a", withText("Go Back"));
+    assertThat(pageSource()).contains("cd 1");
+    assertThat(pageSource()).contains("cd 2");
+  }
 }
