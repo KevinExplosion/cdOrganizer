@@ -15,11 +15,12 @@ public class CdTest {
     assertEquals("cd name", myCd.getTitle());
   }
 
-  // @Test
-  // public void cd_instantiantesWithArtist_true() {
-  //   Cd myCd = new Cd("cd artist");
-  //   assertEquals("cd artist", myCd.getArtist());
-  // }
+  @Test
+  public void cd_instantiantesWithArtist_true() {
+    Cd myCd = new Cd("cd name");
+    myCd.setArtist("artist name");
+    assertEquals("artist name" , myCd.getArtist());
+  }
 
   @Test
   public void all_returnsAllInstancesOfCd() {

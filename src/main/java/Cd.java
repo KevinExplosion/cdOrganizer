@@ -5,7 +5,6 @@ public class Cd {
 
   private int mId;
   private String mTitle;
-  // private String mArtist;
 
   public Cd(String title) {
     mTitle = title;
@@ -32,7 +31,4 @@ public class Cd {
       return null;
     }
   }
-  // public void getArtist(String artist) {
-  //   mArtist = artist;
-  // }
 }

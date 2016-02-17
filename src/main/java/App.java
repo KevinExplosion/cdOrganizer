@@ -42,5 +42,13 @@ public class App {
       model.put("template", "templates/titles.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
+
+    post("/titles", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+
+      model.put("cds", Cd.all());
+      model.put("template", "templates/titles.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
   }
 }
