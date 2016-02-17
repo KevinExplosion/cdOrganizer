@@ -2,7 +2,7 @@
   <ul>
 
     #foreach ($cd in $cds)
-    <li>$cd.getTitle()</li>
+    <li><a href="/titles/$cd.getId()">$cd.getTitle()</a></li>
     #end
 
   </ul>
