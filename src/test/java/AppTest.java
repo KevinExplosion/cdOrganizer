@@ -29,6 +29,6 @@ public class AppTest extends FluentTest {
     goTo("http://localhost:4567/");
     fill("#title").with("cd name");
     submit(".btn");
-    assertThat(pageSource()).contains("Your");
+    assertThat(pageSource()).contains("cd name");
   }
 }

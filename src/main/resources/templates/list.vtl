@@ -1,3 +1,8 @@
 <h2>Your CDs</h2>
+  <ul>
 
-<h4>$myCd.getTitle()</h4>
+    #foreach ($cd in $cds)
+    <li>$cd.getTitle()</li>
+    #end
+
+  </ul>

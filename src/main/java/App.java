@@ -22,10 +22,16 @@ public class App {
 
       String title = request.queryParams("title");
       Cd myCd = new Cd(title);
-
+      model.put("cds", Cd.all());
       model.put("template", "templates/list.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
+    // get("/list", (request, response) -> {
+    //   HashMap<String, Object> model = new HashMap<String, Object>();
+    //   model.put("cds", Cd.all());
+    //   model.put("template", "templates/list.vtl");
+    //   return new ModelAndView(model, layout);
+    // }, new VelocityTemplateEngine());
   }
 }
