@@ -15,6 +15,12 @@ public class CdTest {
     assertEquals("cd name", myCd.getTitle());
   }
 
+  // @Test
+  // public void cd_instantiantesWithArtist_true() {
+  //   Cd myCd = new Cd("cd artist");
+  //   assertEquals("cd artist", myCd.getArtist());
+  // }
+
   @Test
   public void all_returnsAllInstancesOfCd() {
     Cd firstCd = new Cd ("cd 1");
@@ -27,5 +33,12 @@ public class CdTest {
   public void getId_taskInstantiateWithAnID_true() {
     Cd myCd = new Cd("cd name");
     assertEquals(Cd.all().size(), myCd.getId());
+  }
+
+  @Test
+  public void find_retrievesCdTitleByID() {
+    Cd firstCd = new Cd("cd name");
+    Cd secondCd = new Cd("other cd");
+    assertEquals(Cd.find(secondCd.getId()), secondCd);
   }
 }

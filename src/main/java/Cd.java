@@ -5,6 +5,7 @@ public class Cd {
 
   private int mId;
   private String mTitle;
+  // private String mArtist;
 
   public Cd(String title) {
     mTitle = title;
@@ -23,4 +24,15 @@ public class Cd {
   public int getId() {
     return mId;
   }
+
+  public static Cd find(int id) {
+    try {
+      return instances.get(id - 1);
+    } catch (IndexOutOfBoundsException exception) {
+      return null;
+    }
+  }
+  // public void getArtist(String artist) {
+  //   mArtist = artist;
+  // }
 }

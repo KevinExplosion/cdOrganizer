@@ -33,5 +33,14 @@ public class App {
     //   model.put("template", "templates/list.vtl");
     //   return new ModelAndView(model, layout);
     // }, new VelocityTemplateEngine());
+
+    get("/list/:id", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+
+      Cd cd = Cd.find(Integer.parseInt(request.params(":id")));
+      model.put("cd", cd);
+      model.put("template", "templates/list.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
   }
 }
