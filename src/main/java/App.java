@@ -17,33 +17,15 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    get("/list", (request, response) -> {
+    post("/list", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
-      
+
       String title = request.queryParams("title");
       Cd myCd = new Cd(title);
 
       model.put("template", "templates/list.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
-    //
-    // post("/tasks", (request, response) -> {
-    //   HashMap<String, Object> model = new HashMap<String, Object>();
-    //
-    //   ArrayList<Task> tasks = request.session().attribute("tasks");
-    //
-    //   if (tasks == null) {
-    //     tasks = new ArrayList<Task>();
-    //     request.session().attribute("tasks", tasks);
-    //   }
-    //
-    //   String description = request.queryParams("description");
-    //   Task newTask = new Task(description);
-    //
-    //   tasks.add(newTask);
-    //
-    //   model.put("template", "templates/success.vtl");
-    //   return new ModelAndView(model, layout);
-    // }, new VelocityTemplateEngine());
+
   }
 }

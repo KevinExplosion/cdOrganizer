@@ -20,9 +20,15 @@ public class AppTest extends FluentTest {
 
   @Test
   public void rootTest() {
-      goTo("http://localhost:4567/");
-      assertThat(pageSource()).contains("CD Organizer");
+    goTo("http://localhost:4567/");
+    assertThat(pageSource()).contains("CD Organizer");
   }
 
-  
+  @Test
+  public void cdListTest() {
+    goTo("http://localhost:4567/");
+    fill("#title").with("cd name");
+    submit(".btn");
+    assertThat(pageSource()).contains("Your");
+  }
 }
